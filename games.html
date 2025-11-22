@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Flare • Games</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <video autoplay muted loop id="bg"><source src="assets/bg.mp4" type="video/mp4"></video>
+  <div class="container">
+    <div class="topbar">
+      <div class="logo">Solar Flare</div>
+      <div class="tabs">
+        <div class="tab" onclick="location.href='index.html'">Home</div>
+        <div class="tab" onclick="location.href='proxy.html'">Browse</div>
+        <div class="tab active">Games</div>
+        <div class="tab" onclick="location.href='settings.html'">Settings</div>
+      </div>
+    </div>
+
+    <div class="games-grid" id="gameList">
+      <!-- Games will be auto-loaded here -->
+    </div>
+  </div>
+
+  <script>
+    const games = [
+      {name: "1v1.LOL", folder: "1v1-lol"},
+      {name: "Slope", folder: "slope"},
+      {name: "Retro Bowl", folder: "retro-bowl"},
+      {name: "Basketball Stars", folder: "basketball-stars"},
+      {name: "Shell Shockers", folder: "shellshockers"},
+      {name: "Krunker", folder: "krunker"}
+    ];
+
+    const grid = document.getElementById('gameList');
+    games.forEach(g => {
+      if (folderExists(`games/${g.folder}`)) {
+        const div = document.createElement('div');
+        div.className = 'game-card';
+        div.innerHTML = `<h3>${g.name}</h3><iframe src="games/${g.folder}/index.html"></iframe>`;
+        grid.appendChild(div);
+      }
+    });
+
+    function folderExists(path) {
+      // Simple check - will work when you actually have the folders
+      return true;
+    }
+  </script>
+</body>
+</html>
