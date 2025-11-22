@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Flare • Settings</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <video autoplay muted loop id="bg"><source src="assets/bg.mp4" type="video/mp4"></video>
+  <div class="container">
+    <div class="topbar">
+      <div class="logo">Solar Flare</div>
+      <div class="tabs">
+        <div class="tab" onclick="location.href='index.html'">Home</div>
+        <div class="tab" onclick="location.href='proxy.html'">Browse</div>
+        <div class="tab" onclick="location.href='games.html'">Games</div>
+        <div class="tab active">Settings</div>
+      </div>
+    </div>
+
+    <div class="content settings-page">
+      <h2>Cloaking</h2>
+      <select id="cloak" onchange="applyCloak()">
+        <option value="default">Default (Solar Flare)</option>
+        <option value="google">Google Docs</option>
+        <option value="classroom">Google Classroom</option>
+        <option value="drive">Google Drive</option>
+      </select>
+
+      <h2>Panic Key → Google Classroom</h2>
+      <p>Press F12 or Alt + P anytime</p>
+      <p style="color:#0f0;">ACTIVE</p>
+    </div>
+  </div>
+
+  <script>
+    function applyCloak() {
+      const val = document.getElementById('cloak').value;
+      if (val === 'google') { document.title = "My Drive - Google Drive"; }
+      else if (val === 'classroom') { document.title = "Classes - Google Classroom"; }
+      else if (val === 'drive') { document.title = "Google Docs"; }
+      else { document.title = "Solar Flare"; }
+    }
+    applyCloak();
+  </script>
+</body>
+</html>
