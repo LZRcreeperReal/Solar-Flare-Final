@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Flare</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/icon.png">
+</head>
+<body>
+  <video autoplay muted loop id="bg">
+    <source src="assets/bg.mp4" type="video/mp4">
+  </video>
+
+  <div class="container">
+    <div class="topbar">
+      <div class="logo">Solar Flare</div>
+      <div class="tabs">
+        <div class="tab active" onclick="location.href='index.html'">Home</div>
+        <div class="tab" onclick="location.href='proxy.html'">Browse</div>
+        <div class="tab" onclick="location.href='games.html'">Games</div>
+        <div class="tab" onclick="location.href='settings.html'">Settings</div>
+      </div>
+      <div class="settings-btn" id="panic" style="display:none;">Panic Key Active</div>
+    </div>
+
+    <div class="content home">
+      <h1>Welcome to Solar Flare</h1>
+      <p>The ultimate unblocked experience.</p>
+      <br><br>
+      <button onclick="location.href='proxy.html'" class="bigbtn">Open Proxy</button>
+      <button onclick="location.href='games.html'" class="bigbtn">Play Games</button>
+    </div>
+  </div>
+
+  <script>
+    // Panic key (F12 or Alt + P)
+    document.addEventListener('keydown', e => {
+      if (e.key === 'F12' || (e.altKey && e.key === 'p')) {
+        window.location.href = 'https://classroom.google.com';
+      }
+    });
+  </script>
+</body>
+</html>
