@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Flare • Browse</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <video autoplay muted loop id="bg"><source src="assets/bg.mp4" type="video/mp4"></video>
+  <div class="container">
+    <div class="topbar">
+      <div class="logo">Solar Flare</div>
+      <div class="tabs">
+        <div class="tab" onclick="location.href='index.html'">Home</div>
+        <div class="tab active">Browse</div>
+        <div class="tab" onclick="location.href='games.html'">Games</div>
+        <div class="tab" onclick="location.href='settings.html'">Settings</div>
+      </div>
+    </div>
+    <iframe src="/rammerhead/" style="width:100%; height:calc(100vh - 60px); border:none;"></iframe>
+  </div>
+</body>
+</html>
